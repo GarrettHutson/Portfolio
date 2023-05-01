@@ -11,14 +11,15 @@ import { PortableText } from '@portabletext/react'
 function Climbcards({climbPosts}) {
 
     const { scrollYProgress } = useScroll()
-
+    const y1 = useTransform(scrollYProgress,[0,1],["0%","50%"])
+    const y2 = useTransform(scrollYProgress,[0,1],["0%","100%"])
     if(!climbPosts) return <div>loading...</div>
    
   return (
     <>
     <section>
    <motion.div 
-      style={{y:useTransform(scrollYProgress,[0,1],["0%","50%"]),backgroundImage: "url('/images/goat.jpeg')"}}
+      style={{y:y1,backgroundImage: "url('/images/goat.jpeg')"}}
     // style={{backgroundImage: "url('/images/goat.jpeg')"}}
        className={`absolute bg-cover bg-center h-[2000px] w-screen z-0`}
    >
@@ -32,7 +33,7 @@ function Climbcards({climbPosts}) {
     {climbPosts.map((climb,i) => (
      
         <motion.div 
-        style={{y:useTransform(scrollYProgress,[0,1],["0%","100%"])}} 
+        style={{y:y2}} 
       
           transition={{
             duration:0.9,

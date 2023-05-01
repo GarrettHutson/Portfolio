@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { PortableText } from "@portabletext/react";
 import { Project } from '@/types/Project';
 import { motion} from 'framer-motion'
-import { useEffect, useRef, useState } from 'react';
+import {  useState } from 'react';
 
 type Props = {
     projects: Project[];
@@ -17,19 +17,7 @@ export default function Post({ projects }: Props) {
     const [selectedProject, setSelectedProject] = useState(null);
    
 
-    useEffect(() => {
-        const headerText = "Hii, I'm Garrett, a Developer.";
-        let index = 0;
-        const intervalId = setInterval(() => {
-            setHeader((prev) => prev + headerText[index]);
-            index++;
-            if (index >= headerText.length - 1) clearInterval(intervalId);
-        }, 100);
 
-
-
-        return () => clearInterval(intervalId);
-    }, []);
 
 
 
