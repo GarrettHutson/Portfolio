@@ -6,7 +6,7 @@ type Props = {
 
 
 async function Project({params}: Props) {
-console.log(params)
+
     const slug = params.project;
     const project = await getProject(slug);
   return (

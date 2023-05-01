@@ -12,10 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-  
-      <body className='bg-slate-400'>
-      <Nav />
-      {children}
+
+      <body
+ 
+        className=" bg-gradient-to-r from-red-900 to-orange-900">
+        <Nav />
+        {children}
       </body>
     </html>
   )

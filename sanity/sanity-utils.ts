@@ -47,8 +47,26 @@ export async function getClimbs(): Promise<[]> {
       description,
       location,
       grade
-      
+
     }`
+  )
+}
+
+export async function getClimb(slug: string): Promise<any>{
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "climb" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      cragName,
+      routeName,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url,
+      description,
+      location,
+      grade
+    }`,
+    { slug }
   )
 }
 

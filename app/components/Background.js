@@ -6,20 +6,26 @@ import {
   } from "framer-motion";
 function Background() {
     const { scrollYProgress } = useScroll()
-    const y1 = useTransform(scrollYProgress,[0,1],["0%","50%"])
+    const y1 = useTransform(scrollYProgress,[0,1],["50%","100%"])
   return (
-    <>
-    <section>
+    <div>
+
     <motion.div 
-    style={{y:y1,backgroundImage: "url('/images/goat.jpeg')"}}
+    // style={{y:y1,backgroundImage: "url('/images/goat.jpeg'),"}}
 
-     className={`absolute bg-cover bg-center w-screen h-screen   z-0`}
- >
+     className={`absolute bg-fixed bg-cover bg-center w-screen h-screen   z-0`}
+ 
+//   className="absolute w-full h-full"
+  style={{
+    y: y1,
+backgroundImage: "url('/images/goat.jpeg')",
 
+}}
 
+>
    </motion.div>
-   </section>
-    </>
+
+    </div>
 
   )
 }
