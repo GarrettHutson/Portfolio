@@ -1,3 +1,5 @@
+import content from "./climb-schema";
 import project from "./project-schema";
-const schemas = [project];
+import Climb from "./climb-schema";
+const schemas = [project,Climb];
 export default schemas;
