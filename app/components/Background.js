@@ -6,7 +6,7 @@ import {
   } from "framer-motion";
 function Background() {
     const { scrollYProgress } = useScroll()
-    const y1 = useTransform(scrollYProgress,[0,1],["50%","100%"])
+    const y1 = useTransform(scrollYProgress,[0, 1],["50%","100%"])
   return (
     <div>
 

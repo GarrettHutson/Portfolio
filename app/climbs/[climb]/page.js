@@ -12,7 +12,7 @@ async function Chosenclimb({params}) {
     const climb = await getClimb(slug);
   return (
     <>
-    {/* <Background /> */}
+    <Background />
     <div className="pt-24">
     <Climb climb={climb}/>
     </div>

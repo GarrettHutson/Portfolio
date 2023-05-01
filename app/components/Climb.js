@@ -23,14 +23,14 @@ function Climb({climb}) {
             BorderBottomWidth:2,
             borderTopWidth:2,
             transition: {
-            duration: 0.5,
+            duration: 1,
             
             ease: "easeIn",
           },
         },
       };
    
-    const y2 = useTransform(scrollYProgress,[0,1],["0%","50%"])
+    const y2 = useTransform(scrollYProgress,[0,1],["0%","30%"])
   return (
     <>
 

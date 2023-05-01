@@ -34,7 +34,7 @@ useEffect(() => {
     <motion.div
 
      initial={{ y: "10vh"}}
-    animate={{ y: "50vh", x:"-20vw", transition: { duration: 1, delay: 2.8 } }}
+    animate={{ y: "50vh", x:"-20vw", transition: { duration: 1, delay: 5 } }}
      className='flex flex-col items-center gap-4 text-white'>
     <motion.h2
     
@@ -46,20 +46,21 @@ useEffect(() => {
      initial={{ opacity: 0 }}
                  animate={{
                      opacity: 1,
-                     transition: { duration:1, delay: 4 },
+                     transition: { duration:1, delay: 5 },
                  }}
 >Full Stack Developer currently working in freelance and open source.</motion.p>
 <motion.p
 initial={{ opacity: 0 }}
                  animate={{
                      opacity: 1,
-                     transition: { duration:1, delay: 4 },
+                     transition: { duration:1, delay: 5.8 },
                  }}
 
 >
         Avid Rock Climber currently climbing in{' '}
         <AnimatePresence mode='wait'>
           <motion.span
+          className='text-xl'
             key={area[count]}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1,
