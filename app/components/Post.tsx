@@ -15,18 +15,9 @@ export default function Post({ projects }: Props) {
 
   
     const [selectedProject, setSelectedProject] = useState(null);
-   
-
-
-
-
-
-
 
     return (
       <>
-           
-       
 
      <motion.div  className='flex  items-center justify-center '>
          {projects.map((proj: Project, index: number) => (
