@@ -2,7 +2,7 @@
 
 
 import React from 'react'
-import Climbcards from '../components/climbCards'
+import Climbcards from '../components/ClimbCards'
 
 import {getClimbs} from '@/sanity/sanity-utils'
 
