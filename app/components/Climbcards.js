@@ -1,6 +1,6 @@
 
 'use client'
-
+import Image from "next/image";
 import {
   motion,
   useScroll,
@@ -11,22 +11,22 @@ import { PortableText } from '@portabletext/react'
 function Climbcards({climbPosts}) {
 
     const { scrollYProgress } = useScroll()
-    const y1 = useTransform(scrollYProgress,[0,1],["0%","50%"])
-    const y2 = useTransform(scrollYProgress,[0,1],["0%","100%"])
+    // const y1 = useTransform(scrollYProgress,[0,1],["0%","50%"])
+    const y2 = useTransform(scrollYProgress,[0,1],["0%","50%"])
     if(!climbPosts) return <div>loading...</div>
    
   return (
     <>
-    <section>
+    {/* <section>
    <motion.div 
       style={{y:y1,backgroundImage: "url('/images/goat.jpeg')"}}
-    // style={{backgroundImage: "url('/images/goat.jpeg')"}}
-       className={`absolute bg-cover bg-center h-[2000px] w-screen z-0`}
+  
+       className={`absolute bg-cover h-screen  w-screen z-0`}
    >
 
 
      </motion.div>
-     </section>
+     </section> */}
   
 
 
@@ -42,7 +42,7 @@ function Climbcards({climbPosts}) {
         
         }}
         key={i} 
-        className='  my-8 relative text-8xl'>
+        className='p-24 mb-24 mx-auto relative text-8xl w-1/2 border-white border-2'>
         <h1 className='text-4xl text-white'>{climb.cragName}</h1>
         <h2 className='text-2xl text-white'>{climb.routeName}</h2>
         <h3 className='text-xl text-white'>{climb.grade}</h3>
@@ -51,13 +51,26 @@ function Climbcards({climbPosts}) {
         <p className='text-lg text-white'>
         <PortableText value={climb.description} />
         </p>
-        {/* <img className='w-1/2' src={climb.image} /> */}
+     
+        <Image
+  src={climb.image}
+  alt="Climbing image"
+
+    width={500}
+    height={500}
+
+
+/>
+
+
+
 
         </motion.div>
 
   ))}
 
 </>
+
 )}
 
 export default Climbcards
