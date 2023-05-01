@@ -57,7 +57,7 @@ initial={{ opacity: 0 }}
                  }}
 
 >
-        Avid Rock Climber currently climbing in{' '}
+        Avid Rock Climber currently based in{' '}
         <AnimatePresence mode='wait'>
           <motion.span
           className='text-xl'
