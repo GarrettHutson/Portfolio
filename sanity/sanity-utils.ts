@@ -11,12 +11,14 @@ export async function getProjects(): Promise<Project[]> {
       _createdAt,
       name,
       "slug": slug.current,
-      "image": image.asset->url,
+      "images": images[].asset->url,
       url,
       content
     }`
   )
 }
+
+
 
 export async function getProject(slug: string): Promise<Project> {
   return createClient(clientConfig).fetch(
@@ -52,9 +54,9 @@ export async function getClimbs(): Promise<[]> {
   )
 }
 
-export async function getClimb(slug: string): Promise<any>{
+export async function getAreaClimbs(area: string): Promise<any>{
   return createClient(clientConfig).fetch(
-    groq`*[_type == "climb" && slug.current == $slug][0]{
+    groq`*[_type == "climb" && cragName == $area]{
       _id,
       _createdAt,
       cragName,
@@ -66,7 +68,7 @@ export async function getClimb(slug: string): Promise<any>{
       location,
       grade
     }`,
-    { slug }
+    { area }
   )
 }
 

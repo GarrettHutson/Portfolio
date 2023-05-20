@@ -1,20 +1,20 @@
-import Background from "@/app/components/Background";
-import { getClimb } from "@/sanity/sanity-utils";
+import { getAreaClimbs } from "@/sanity/sanity-utils";
 import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
-import Climb from "@/app/components/Climb";
+import Climbs from "@/app/components/Climbs";
 
 
 
 async function Chosenclimb({params}) {
 
-    const slug = params.climb;
-    const climb = await getClimb(slug);
+    const area = params.climb;
+
+    const climbs = await getAreaClimbs(area);
+
   return (
     <>
-    <Background />
     <div className="pt-24">
-    <Climb climb={climb}/>
+    <Climbs climbs={climbs}/>
     </div>
 
 

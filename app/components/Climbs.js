@@ -1,13 +1,12 @@
 'use client'
 import Image from "next/image";
-import Link from "next/link";
 import {
   motion,
   useScroll,
   useTransform,
 } from "framer-motion";
 import { PortableText } from '@portabletext/react'
-function Climb({climb}) {
+function Climbs({climbs}) {
 
   const { scrollYProgress } = useScroll()
     const variants = {
@@ -33,6 +32,8 @@ function Climb({climb}) {
     const y2 = useTransform(scrollYProgress,[0,1],["0%","30%"])
   return (
     <>
+{ climbs.map((climb, i)=>
+
 
   <motion.div 
    style={{y:y2,
@@ -63,8 +64,9 @@ height={500}
 
 />
 </motion.div>
+)}
 </>
 )}
 
 
-export default Climb
+export default Climbs

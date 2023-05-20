@@ -37,11 +37,21 @@ function Climbcards({climbPosts}) {
     // const y1 = useTransform(scrollYProgress,[0,1],["0%","50%"])
     const y2 = useTransform(scrollYProgress,[0,1],["0%","50%"])
     if(!climbPosts) return <div>loading...</div>
-   
+    const objList = {};
+    const uniqueAreas = climbPosts.reduce((result, obj)=>{
+      if(!objList[obj.cragName]){
+        objList[obj.cragName] = true;
+        result.push(obj)
+      }
+      return result
+    },[])
+    
+    // const uniqueAreas = Array.from(new Set(climbPosts.map(obj => obj.cragName)));
+  
   return (
     <>
-    {climbPosts.map((climb,i) => (
-        <Link href={`/climbs/${climb.slug}`}>
+    {uniqueAreas.map((climb,i) => (
+        <Link href={`/climbs/${climb.cragName}`}>
         <motion.div 
         style={{y:y2,
 

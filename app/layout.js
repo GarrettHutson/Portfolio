@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Nav from './components/Nav'
-
+import Footer from './components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -14,10 +14,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
 
       <body
- 
-        className=" bg-gradient-to-r from-red-900 to-orange-900">
-        <Nav />
+
+        className=" 
+         bg-gradient-to-r
+        from-red-700
+         to-orange-500
+         background-animate ">
+ <Nav />
         {children}
+<Footer />
       </body>
     </html>
   )
