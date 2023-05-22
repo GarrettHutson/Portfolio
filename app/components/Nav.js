@@ -24,6 +24,9 @@ function Nav() {
       <Link className='transform -rotate-90 hover:line-through my-8' href='/' >
         HOME
       </Link>
+      <Link className='transform -rotate-90 hover:line-through my-8' href='/test' >
+        Test
+      </Link>
       <motion.div className='border-t-2 border-white h-24 w-24 transform rotate-90'> </motion.div>
     </motion.nav>
   )
