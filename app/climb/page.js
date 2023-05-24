@@ -2,7 +2,7 @@
 
 
 import React from 'react'
-import Climbcards from '../components/Climbcards'
+import Areas from '../components/Areas'
 import {getClimbs} from '@/sanity/sanity-utils'
 
 
@@ -13,10 +13,10 @@ async function Climb() {
   return (
 <div className=''>
 
-<div className='pt-24'>
+<div className=''>
 
 
-    <Climbcards climbPosts={climbPosts}/>
+    <Areas climbPosts={climbPosts}/>
 
 </div>
 </div>

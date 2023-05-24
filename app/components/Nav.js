@@ -13,21 +13,37 @@ function Nav() {
     <motion.nav
 
       // style={{ opacity: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}
-      className="z-20 flex flex-col  p-8 items-center fixed left-0 h-screen w-fit text-white">
-      <motion.div className='border-b-2 border-white h-24 w-24 transform rotate-90'> </motion.div>
-      <Link className='transform -rotate-90 hover:line-through my-8' href='/code' >
+      className="
+
+       flex 
+       sm:flex-col  
+       p-8 
+       sm:items-center 
+       sm:fixed 
+       sm:left-0 
+       sm:h-screen 
+       sm:w-fit 
+       text-white
+    
+
+
+ 
+
+       "
+       
+      >
+      <motion.div className='border-b-2 border-white h-24 w-24 transform sm:rotate-90'> </motion.div>
+      <Link className='sm:transform sm:-rotate-90 hover:line-through mx-8 my-8' href='/code' >
         CODE
       </Link>
-      <Link className='transform -rotate-90 hover:line-through my-8' href='/climb' >
+      <Link className='sm:transform sm:-rotate-90 hover:line-through mx-8 my-8' href='/climb' >
         CLIMB
       </Link>
-      <Link className='transform -rotate-90 hover:line-through my-8' href='/' >
+      <Link className='sm:transform sm:-rotate-90 hover:line-through mx-8 my-8' href='/' >
         HOME
       </Link>
-      <Link className='transform -rotate-90 hover:line-through my-8' href='/test' >
-        Test
-      </Link>
-      <motion.div className='border-t-2 border-white h-24 w-24 transform rotate-90'> </motion.div>
+ 
+      <motion.div className='border-t-2 border-white h-24 w-24 sm:transform sm:rotate-90'> </motion.div>
     </motion.nav>
   )
 }

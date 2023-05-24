@@ -4,6 +4,7 @@ import { PortableText } from "@portabletext/react";
 import { Project } from '@/types/Project';
 import { motion } from 'framer-motion'
 import { useState } from 'react';
+import Link from 'next/link';
 
 type Props = {
   projects: Project[];
@@ -20,45 +21,22 @@ export default function Projects({ projects }: Props) {
   }
 
   return (
-    <div className='flex items-center justify-center'>
+    <div className='flex flex-col my-8 items-center justify-center mx-24'>
       {projects.map((proj: Project, index: number) => (
         <motion.div
-          drag
-          initial={{ opacity: 0, x: -100 }}
-          animate={{
-            opacity: 1, x: 0,
-            transition: { duration: (index + 1) * 1.25, delay: 1 },
-          }}
-          className=' flex flex-col w-1/4 border-black border-2 items-center gap-4'
-          onClick={() => setSelectedProject((prev) => prev === proj ? null : proj)}
-          key={proj._id}>
-          <h2>{proj.name}</h2>
-          <Image
-            key={index}
-            src={proj.images[0]}
-            onClick={(e) => displayProjectsHandler(e, index)}
-            alt={proj.name}
-            width={250}
-            height={250}
-            className=" rounded-lg border border-gray-500 mx-4"
-          />
-
-          {proj.images.length > 1 && viewIndex === index && proj.images.slice(1).map((image, index) => (
-            <Image
-              key={index}
-              src={image}
-              alt={proj.name}
-              width={100}
-              height={100}
-              className="object-cover rounded-lg border border-gray-500 mx-4"
-            />
-       ))}
-          {viewIndex === index && (
-          <div className='w-3/4' onClick={() => setSelectedProject(null)}>
-            <PortableText value={proj.content} />
-          </div>
-         )} 
-        </motion.div>
+drag
+initial={{ opacity: 0, x: -100 }}
+animate={{
+  opacity: 1, x: 0,
+  transition: { duration: (index + 1) },
+}}
+className=' flex flex-col  w-3/4 border-black border-2 items-center my-8 p-8 mx-8 gap-4'
+key={proj._id}>
+<Link
+href={`/projects/${proj.slug}`}
+className='text-4xl'
+>{proj.name}</Link>
+</motion.div>
       ))}
     </div>
   )

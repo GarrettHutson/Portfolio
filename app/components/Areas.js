@@ -60,8 +60,8 @@ function Climbcards({climbPosts}) {
         initial="hidden"
         animate="visible"
         key={i} 
-        className='p-24 mb-24 mx-auto relative text-8xl w-1/2 border-white border-2'>
-        <h1 className='text-4xl  text-white'>{climb.cragName}</h1>
+        className='p-12 my-8 mx-auto relative text-8xl w-3/4  sm:w-1/2 border-white border-2'>
+        <h1 className='text-4xl text-white'>{climb.cragName}</h1>
         </motion.div>
 </Link>
   ))}

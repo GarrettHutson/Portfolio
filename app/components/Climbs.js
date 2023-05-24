@@ -17,13 +17,12 @@ function Climbs({climbs}) {
         borderTopWidth:0,
         },
         visible: {
-          borderLeftWidth: 2,
-            borderRightWidth: 2,
-            BorderBottomWidth:2,
-            borderTopWidth:2,
+          borderLeftWidth: 1,
+            borderRightWidth: 1,
+            BorderBottomWidth:1,
+            borderTopWidth:1,
             transition: {
-            duration: 1,
-            
+            duration: .25,
             ease: "easeIn",
           },
         },
@@ -31,7 +30,9 @@ function Climbs({climbs}) {
    
     const y2 = useTransform(scrollYProgress,[0,1],["0%","30%"])
   return (
-    <>
+    <div
+    className="mx-8 flex flex-col justify-center"
+    >
 { climbs.map((climb, i)=>
 
 
@@ -42,11 +43,11 @@ variants={variants}
 initial="hidden"
 animate="visible"
 
-className='p-24 mb-24 mx-auto relative text-8xl w-1/2 border-white border-2'>
+className='p-4 mb-24 mx-auto relative text-3xl md:text-4xl sm:w-1/2 border-white border-2'>
 
 <div className="mb-8">{climb.routeName}</div>
         <h1 className='text-4xl text-white'>{climb.cragName}</h1>
-    <h2 className='text-2xl text-white'>{climb.routeName}</h2>
+
     <h3 className='text-xl text-white'>{climb.grade}</h3>
     <h4 className='text-lg text-white'>{climb.rating}</h4>
    
@@ -65,7 +66,7 @@ height={500}
 />
 </motion.div>
 )}
-</>
+</div>
 )}
 
 

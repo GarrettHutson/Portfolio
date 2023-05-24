@@ -17,6 +17,17 @@ const project = {
       options: { source: "name" }
     },
     {
+      name: "date",
+      title: "Date",
+      type: "date"
+    },
+    {
+      name: "technologies",
+      title: "Technologies",
+      type: "array",
+      of: [{ type: "string" }]
+    },
+    {
       name: "images",
       title: "Images",
       type: "array",

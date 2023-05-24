@@ -7,7 +7,7 @@ function Header() {
   const [count, setCount] = useState(0)
   const [count2, setCount2] = useState(0)
   const [role,setRole] =useState('')
-  const jobs = ['Code', 'Climb', 'Design']
+  const jobs = ['Code', 'Climb']
   const area = ['Rifle Mountin Park', 'Red River Gorge', 'New River Gorge', 'Smith Rock', 'Hueco Tanks', 'Bishop', 'Yosemite', 'Rocky Mountain National Park', 'Indian Creek', 'Rifle', 'Ten Sleep', 'Maple Canyon']
   // useEffect(() => {
   //   const count = setTimeout(() => {
@@ -93,19 +93,20 @@ function Header() {
     </motion.div> */}
       <motion.div
         initial={{ y: "10vh" }}
-        animate={{ y: "50vh", x: "20vw", transition: { duration: 1, delay: 3.5 } }}
+        animate={{ y: "30vh", x: "20vw", transition: { duration: 1, delay: 3.5 } }}
         className='flex flex-col items-center gap-4 text-white'>
         <motion.h2
           className='  text-2xl text-center mt-16'>
           {header}        
            <AnimatePresence mode='wait'>
+       
             <motion.span
               className='text-2xl'
               key={jobs[count2]}
               initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
-                transition: { duration: 1, },
+                transition: { duration: 1,   },
               }}
               exit={{
                 opacity: 0,
