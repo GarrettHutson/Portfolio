@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 import Link from 'next/link'
 
-function Nav() {
+function ClimbNav() {
   const { scrollYProgress } = useScroll()
 
 
@@ -25,12 +25,10 @@ function Nav() {
        
       >
       <motion.div className='border-b-2 border-white h-24 w-24 transform sm:rotate-90'> </motion.div>
-      {/* <Link className='sm:transform sm:-rotate-90 hover:line-through mx-8 my-8' href='/notHome/code' >
-        CODE
-      </Link>
+
       <Link className='sm:transform sm:-rotate-90 hover:line-through mx-8 my-8' href='/notHome/climb' >
         CLIMB
-      </Link> */}
+      </Link> 
       <Link className='sm:transform sm:-rotate-90 hover:line-through mx-8 my-8' href='/' >
         HOME
       </Link>
@@ -40,4 +38,4 @@ function Nav() {
   )
 }
 
-export default Nav
+export default ClimbNav

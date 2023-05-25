@@ -14,7 +14,7 @@ export async function getProjects(): Promise<Project[]> {
       "images": images[].asset->url,
       url,
       date,
-      technologies,
+      technologies[],
       content
     }`
   )
@@ -32,7 +32,7 @@ export async function getProject(slug: string): Promise<Project> {
       "images": images[].asset->url,
       url,
       date,
-      technologies,
+      technologies[],
       content
     }`,
     { slug }

@@ -1,6 +1,6 @@
 
 import { getProjects } from '@/sanity/sanity-utils'
-import Projects from '../components/Projects';
+import Projects from '../../components/Projects';
 
 export default async function Code() {
   const projects = await getProjects();

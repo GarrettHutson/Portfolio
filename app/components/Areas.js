@@ -1,40 +1,36 @@
 
 'use client'
-import Image from "next/image";
 import Link from "next/link";
 import {
   motion,
   useScroll,
   useTransform,
+  useAnimation,
 } from "framer-motion";
-import { PortableText } from '@portabletext/react'
+import { useState } from "react";
+
 
 function Climbcards({climbPosts}) {
     const { scrollYProgress } = useScroll()
-    const borderOpacity = useTransform(scrollYProgress, [0, 1], [0, 100]);
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
+    const controls = useAnimation();
+  
+    const handleHoverStart = (index) => {
+      setHoveredIndex(index);
+      controls.start({ x: 0 });
+    };
+  
+    const handleHoverEnd = () => {
+      setHoveredIndex(null);
+      controls.start({ x: 100 });
+    };
+   
     const variants = {
-        hidden: {
-          borderLeftWidth: 0,
-          borderRightWidth: 0,
-        BorderBottomWidth:0,
-        borderTopWidth:0,
-        },
-        visible: {
-          borderLeftWidth: 2,
-            borderRightWidth: 2,
-            BorderBottomWidth:2,
-            borderTopWidth:2,
-            transition: {
-            duration: 0.5,
-            
-            ease: "easeIn",
-          },
-        },
-      };
+      hidden: { x: 100 },
+      visible: { x: 0 },
+    } 
 
-
-
-    // const y1 = useTransform(scrollYProgress,[0,1],["0%","50%"])
     const y2 = useTransform(scrollYProgress,[0,1],["0%","50%"])
     if(!climbPosts) return <div>loading...</div>
     const objList = {};
@@ -45,22 +41,25 @@ function Climbcards({climbPosts}) {
       }
       return result
     },[])
-    
-    // const uniqueAreas = Array.from(new Set(climbPosts.map(obj => obj.cragName)));
-  
+      
   return (
     <>
-    {uniqueAreas.map((climb,i) => (
-        <Link href={`/climbs/${climb.cragName}`}>
+    {uniqueAreas.map((climb,index) => (
+        <Link href={`/notHome/climbs/${climb.cragName}`}>
         <motion.div 
         style={{y:y2,
-
         }}
         variants={variants}
-        initial="hidden"
-        animate="visible"
-        key={i} 
-        className='p-12 my-8 mx-auto relative text-8xl w-3/4  sm:w-1/2 border-white border-2'>
+          initial={{ opacity: 0, x: 100 }}
+          animate={{
+            opacity: 1,
+            x: hoveredIndex === index ? 100 : 0,
+            transition: { duration: index + 1 },
+          }}
+        key={index} 
+        onMouseEnter={() => handleHoverStart(index)}
+        onMouseLeave={handleHoverEnd}
+        className='p-12 my-8 mx-auto relative font-thin w-3/4  sm:w-1/2 border-white border'>
         <h1 className='text-4xl text-white'>{climb.cragName}</h1>
         </motion.div>
 </Link>

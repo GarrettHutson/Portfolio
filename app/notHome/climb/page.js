@@ -2,7 +2,7 @@
 
 
 import React from 'react'
-import Areas from '../components/Areas'
+import Areas from '../../components/Areas'
 import {getClimbs} from '@/sanity/sanity-utils'
 
 
