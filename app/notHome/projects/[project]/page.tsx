@@ -4,11 +4,9 @@ import { Project } from "@/types/Project";
 
 type Props = {
   params: { project: string }
-  project: Project; 
-
 }
 
-async function Project({ params }: Props) {
+async function OneProj({ params }: Props) {
   const slug = params.project;
   const proj = await getProject(slug);
   return (
@@ -19,4 +17,4 @@ async function Project({ params }: Props) {
   );
 }
 
-export default Project;
+export default OneProj;
